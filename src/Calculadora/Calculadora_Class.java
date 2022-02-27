@@ -165,18 +165,19 @@ public class Calculadora_Class extends JFrame{
         String[]tags = {"S", "R", "P", "D", "."};
         
         int j = 0;
-       for(int i = 0; i < botones.length; i++){
-           if(i<=9){
-               botones[i] = new JButton(String.valueOf(i));
-               botones[i].addActionListener(buttonListener);
-               panel2.add(botones[i]);
-           }
-           else{
-               botones[i] = new JButton(tags[j]);
-               panel2.add(botones[i]);
-               j++;
-           }
-       }
+        for(int i = 0; i < botones.length; i++){
+            if(i<=9){
+                botones[i] = new JButton(String.valueOf(i));
+                botones[i].addActionListener(buttonListener);
+                panel2.add(botones[i]);
+            }
+            else{
+                botones[i] = new JButton(tags[j]);
+                botones[i].addActionListener(buttonListener);
+                panel2.add(botones[i]);
+                j++;
+            }
+        }
        
     }
 }
