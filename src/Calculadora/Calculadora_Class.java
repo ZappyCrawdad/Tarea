@@ -94,11 +94,12 @@ public class Calculadora_Class extends JFrame{
             }
             if(e.getSource()==botones[14]){
                 // Si el número del textField no tiene un punto decimal aún...
-                if(!fields[index].getText().cointains("."))   {
+                if(!fields[index].getText().contains("."))   {
                   fields[index].setText(fields[index].getText() + ".");
                 }
                    
             }
+        }
     }
        
     public Calculadora_Class(){
