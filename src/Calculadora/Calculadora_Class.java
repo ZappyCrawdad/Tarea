@@ -24,7 +24,8 @@ public class Calculadora_Class extends JFrame{
    
        private JButton [] botones = new JButton[15];
        
-       JTextField caja1, caja2;
+       JTextField caja1 = new JTextField();
+       JTextField caja2 = new JTextField();
        JTextField [] fields = {caja1, caja2};
        int index = 0;
        
@@ -127,14 +128,12 @@ public class Calculadora_Class extends JFrame{
         JLabel etiqueta1 = new JLabel("a");
         panel3.add(etiqueta1);
         
-        caja1 = new JTextField();
         caja1.setEditable(false);
         panel3.add(caja1);
         
         JLabel etiqueta2 = new JLabel("b");
         panel3.add(etiqueta2);
 
-        JTextField caja2 = new JTextField();
         caja2.setEditable(false);
         panel3.add(caja2);
         
