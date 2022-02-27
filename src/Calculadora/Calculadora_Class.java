@@ -37,39 +37,39 @@ public class Calculadora_Class extends JFrame{
                 fields[index].setText(fields[index].getText() + "0");
             }
             if(e.getSource()==botones[1]){
-                caja1.setText(caja1.getText() + "1");
+                fields[index].setText(fields[index].getText() + "1");
                 //System.out.println("1");
             }
             if(e.getSource()==botones[2]){
-                caja1.setText(caja1.getText() + "2");
+                fields[index].setText(fields[index].getText() + "2");
                // System.out.println("2");
             }
             if(e.getSource()==botones[3]){
-                caja1.setText(caja1.getText() + "3");
+                fields[index].setText(fields[index].getText() + "3");
                 //System.out.println("3");
             }
             if(e.getSource()==botones[4]){
-                caja1.setText(caja1.getText() + "4");
+                fields[index].setText(fields[index].getText() + "4");
                 //System.out.println("4");
             }
             if(e.getSource()==botones[5]){
-                caja1.setText(caja1.getText() + "5");
+                fields[index].setText(fields[index].getText() + "5");
                 //System.out.println("5");
             }
             if(e.getSource()==botones[6]){
-                caja1.setText(caja1.getText() + "6");
+                fields[index].setText(fields[index].getText() + "6");
                 //System.out.println("6");
             }
             if(e.getSource()==botones[7]){
-                caja1.setText(caja1.getText() + "7");
+                fields[index].setText(fields[index].getText() + "7");
                 //System.out.println("7");
             }
             if(e.getSource()==botones[8]){
-                caja1.setText(caja1.getText() + "8");
+                fields[index].setText(fields[index].getText() + "8");
                 //System.out.println("8");
             }
             if(e.getSource()==botones[9]){
-                caja1.setText(caja1.getText() + "9");
+                fields[index].setText(fields[index].getText() + "9");
                 //System.out.println("9");
             }
             if(e.getSource()==botones[10]){
