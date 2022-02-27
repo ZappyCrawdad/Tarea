@@ -34,11 +34,7 @@ public class Calculadora_Class extends JFrame{
         public void actionPerformed(ActionEvent e) {
             
             if(e.getSource()==botones[0]){
-                caja1.setText(caja1.getText() + "0");
-                if(e.getSource() == botones[0]){
                 fields[index].setText(fields[index].getText() + "0");
-}
-                //System.out.println("0");
             }
             if(e.getSource()==botones[1]){
                 caja1.setText(caja1.getText() + "1");
