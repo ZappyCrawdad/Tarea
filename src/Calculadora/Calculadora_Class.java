@@ -81,18 +81,16 @@ public class Calculadora_Class extends JFrame{
                 index++;
             }
             if(e.getSource()==botones[11]){
-                JTextField [] fields = {caja1, caja2};
-                int index = 0;
-                fields[index].setText(fields[index].getText() + "0");
+                operator = "-";
+                index++;
             }
             if(e.getSource()==botones[12]){
-                JTextField [] fields = {caja1, caja2};
-                int index = 0;
-                fields[index].setText(fields[index].getText() + "0");
+                operator = "*";
+                index++;
             }
             if(e.getSource()==botones[13]){
-                JTextField [] fields = {caja1, caja2};
-                int index = 0;
+                operator = "/";
+                index++;
             }
             if(e.getSource()==botones[14]){
                 // Si el número del textField no tiene un punto decimal aún...
