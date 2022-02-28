@@ -78,19 +78,19 @@ public class Calculadora_Class extends JFrame{
             }
             if(e.getSource()==botones[10]){
                 operator = "+";
-                index++;
+                index=1;
             }
             if(e.getSource()==botones[11]){
                 operator = "-";
-                index++;
+                index=1;
             }
             if(e.getSource()==botones[12]){
                 operator = "*";
-                index++;
+                index=1;
             }
             if(e.getSource()==botones[13]){
                 operator = "/";
-                index++;
+                index=1;
             }
             if(e.getSource()==botones[14]){
                 // Si el número del textField no tiene un punto decimal aún...
@@ -165,6 +165,7 @@ public class Calculadora_Class extends JFrame{
         res = new JButton("Calcular");
         res.setBounds(300, 190, 197, 30);
         res.setBackground(Color.YELLOW);
+        res.addActionListener(buttonListener);
         panel.add(res);
         
         String[]tags = {"S", "R", "P", "D", "."};
