@@ -28,6 +28,7 @@ public class Calculadora_Class extends JFrame{
        JButton res;
        JTextField caja1 = new JTextField();
        JTextField caja2 = new JTextField();
+       JTextField caja3 = new JTextField();
        JTextField [] fields = {caja1, caja2};
        String operator = "";
        int index = 0;
@@ -38,14 +39,14 @@ public class Calculadora_Class extends JFrame{
         public void actionPerformed(ActionEvent e) {
             
             if(e.getSource()==botones[0]){
-                fields[index].setText(fields[index].getText() + "0");
+                concatNumber("0");
             }
             if(e.getSource()==botones[1]){
-                fields[index].setText(fields[index].getText() + "1");
+                concatNumber("1");
                 //System.out.println("1");
             }
             if(e.getSource()==botones[2]){
-                fields[index].setText(fields[index].getText() + "2");
+                concatNumber("2");
                // System.out.println("2");
             }
             if(e.getSource()==botones[3]){
@@ -78,18 +79,22 @@ public class Calculadora_Class extends JFrame{
             }
             if(e.getSource()==botones[10]){
                 operator = "+";
+                caja3.setText(caja3.getText() + "+");
                 index=1;
             }
             if(e.getSource()==botones[11]){
                 operator = "-";
+                caja3.setText(caja3.getText() + "-");
                 index=1;
             }
             if(e.getSource()==botones[12]){
                 operator = "*";
+                caja3.setText(caja3.getText() + "*");
                 index=1;
             }
             if(e.getSource()==botones[13]){
                 operator = "/";
+                caja3.setText(caja3.getText() + "/");
                 index=1;
             }
             if(e.getSource()==botones[14]){
@@ -99,6 +104,11 @@ public class Calculadora_Class extends JFrame{
                 }
                    
             }
+        }
+        
+        private void concatNumber(String text){
+            fields[index].setText(fields[index].getText() + text);
+            caja3.setText(caja3.getText() + text);
         }
     }
        
@@ -148,7 +158,7 @@ public class Calculadora_Class extends JFrame{
         etiqueta3.setBounds(370, 120, 130, 30);
         panel.add(etiqueta3);
         
-        JTextField caja3 = new JTextField();
+        
         caja3.setBounds(300, 150, 197, 30);
         caja3.setEditable(false);
         panel.add(caja3);
