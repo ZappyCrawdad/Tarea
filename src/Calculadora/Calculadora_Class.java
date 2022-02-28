@@ -8,6 +8,7 @@
 */
 
 package Calculadora;
+import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -24,6 +25,7 @@ public class Calculadora_Class extends JFrame{
    
        private JButton [] botones = new JButton[15];
        
+       JButton res;
        JTextField caja1 = new JTextField();
        JTextField caja2 = new JTextField();
        JTextField [] fields = {caja1, caja2};
@@ -161,6 +163,11 @@ public class Calculadora_Class extends JFrame{
         caja4.setBounds(160, 420, 200, 30);
         caja4.setEditable(false);
         panel.add(caja4);
+        
+        res = new JButton("Calcular");
+        res.setBounds(300, 190, 197, 30);
+        res.setBackground(Color.YELLOW);
+        panel.add(res);
         
         String[]tags = {"S", "R", "P", "D", "."};
         
