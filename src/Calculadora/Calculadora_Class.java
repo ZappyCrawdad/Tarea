@@ -27,6 +27,7 @@ public class Calculadora_Class extends JFrame{
        JTextField caja1 = new JTextField();
        JTextField caja2 = new JTextField();
        JTextField [] fields = {caja1, caja2};
+       String operator = "";
        int index = 0;
        
        private class NumberActionListener implements ActionListener{
@@ -74,9 +75,8 @@ public class Calculadora_Class extends JFrame{
                 //System.out.println("9");
             }
             if(e.getSource()==botones[10]){
-                JTextField [] fields = {caja1, caja2};
-                int index = 0;
-                fields[index].setText(fields[index].getText() + "0");
+                operator = "+";
+                index++;
             }
             if(e.getSource()==botones[11]){
                 JTextField [] fields = {caja1, caja2};
