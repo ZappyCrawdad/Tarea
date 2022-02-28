@@ -23,82 +23,132 @@ import javax.swing.border.TitledBorder;
 
 public class Calculadora_Class extends JFrame{
    
-       private JButton [] botones = new JButton[15];
+       private JButton [] botones = new JButton[15]; //Declarar Arreglo de Botones de 15 espacios.
        
        JButton res;
        JTextField caja1 = new JTextField();
        JTextField caja2 = new JTextField();
-       JTextField [] fields = {caja1, caja2};
-       String operator = "";
-       int index = 0;
+       JTextField caja3 = new JTextField();
+       JTextField caja4 = new JTextField();
+       JTextField [] cajas = {caja1, caja2};//Arreglo de Cajas.
+       String operacionSeleccionada = "";//Operación de usuario seleccionada.
+       int puntero = 0;//Puntero de caja (inicia en la caja 1).
        
-       private class NumberActionListener implements ActionListener{
+       private class NumberActionListener implements ActionListener{//Crear clase que implementa ActionListener.
 
         @Override
-        public void actionPerformed(ActionEvent e) {
+        public void actionPerformed(ActionEvent e) {//Dar funcionalidad a los botones.
             
             if(e.getSource()==botones[0]){
-                fields[index].setText(fields[index].getText() + "0");
+                concatenarNumero("0");//Concatena en el puntero.
             }
             if(e.getSource()==botones[1]){
-                fields[index].setText(fields[index].getText() + "1");
+                concatenarNumero("1");
                 //System.out.println("1");
             }
             if(e.getSource()==botones[2]){
-                fields[index].setText(fields[index].getText() + "2");
+                concatenarNumero("2");
                // System.out.println("2");
             }
             if(e.getSource()==botones[3]){
-                fields[index].setText(fields[index].getText() + "3");
+                concatenarNumero("3");
                 //System.out.println("3");
             }
             if(e.getSource()==botones[4]){
-                fields[index].setText(fields[index].getText() + "4");
+                concatenarNumero("4");
                 //System.out.println("4");
             }
             if(e.getSource()==botones[5]){
-                fields[index].setText(fields[index].getText() + "5");
+                concatenarNumero("5");
                 //System.out.println("5");
             }
             if(e.getSource()==botones[6]){
-                fields[index].setText(fields[index].getText() + "6");
+                concatenarNumero("6");
                 //System.out.println("6");
             }
             if(e.getSource()==botones[7]){
-                fields[index].setText(fields[index].getText() + "7");
+                concatenarNumero("7");
                 //System.out.println("7");
             }
             if(e.getSource()==botones[8]){
-                fields[index].setText(fields[index].getText() + "8");
+                concatenarNumero("8");
                 //System.out.println("8");
             }
             if(e.getSource()==botones[9]){
-                fields[index].setText(fields[index].getText() + "9");
+                concatenarNumero("9");
                 //System.out.println("9");
             }
             if(e.getSource()==botones[10]){
-                operator = "+";
-                index=1;
+                operacionSeleccionada = "+";
+                caja3.setText(caja3.getText() + "+");//Se concatena en la caja de operación.
+                puntero=1;//Se cambia de caja.
             }
             if(e.getSource()==botones[11]){
-                operator = "-";
-                index=1;
+                operacionSeleccionada = "-";
+                caja3.setText(caja3.getText() + "-");
+                puntero=1;
             }
             if(e.getSource()==botones[12]){
-                operator = "*";
-                index=1;
+                operacionSeleccionada = "*";
+                caja3.setText(caja3.getText() + "*");
+                puntero=1;
             }
             if(e.getSource()==botones[13]){
-                operator = "/";
-                index=1;
+                operacionSeleccionada = "/";
+                caja3.setText(caja3.getText() + "/");
+                puntero=1;
             }
             if(e.getSource()==botones[14]){
-                // Si el número del textField no tiene un punto decimal aún...
-                if(!fields[index].getText().contains("."))   {
-                  fields[index].setText(fields[index].getText() + ".");
+                // Si el textField no tiene un punto decimal aún...
+                if(!cajas[puntero].getText().contains("."))   {
+                    //Se le añade el punto decimal.
+                  cajas[puntero].setText(cajas[puntero].getText() + ".");
                 }
                    
             }
+            if(e.getSource()==res){//Si se la da click a boton calcular.
+                puntero = 0;//Apuntar de nuevo a la caja 1.
+                try{
+                    double a = Double.parseDouble(caja1.getText());
+                    double b = Double.parseDouble(caja2.getText());
+                    
+                    switch(operacionSeleccionada){
+                        
+                        case "+":
+                            caja4.setText(String.valueOf(a+b));
+                            limpiar();
+                        break;
+                        
+                        case "-":
+                            caja4.setText(String.valueOf(a-b));
+                            limpiar();
+                        break;
+                        
+                        case "*":
+                            caja4.setText(String.valueOf(a*b));
+                            limpiar();
+                        break;
+                        
+                        case "/":
+                            caja4.setText(String.valueOf(a/b));
+                            limpiar();
+                        break;
+                    }
+                }
+                catch(Exception error){//En caso que el Usuario no ingrese un dato.
+                    System.out.print("ERROR! - Ingresa datos");
+                }
+            }
+        }
+        
+        private void concatenarNumero(String numero){
+            cajas[puntero].setText(cajas[puntero].getText() + numero);
+            caja3.setText(caja3.getText() + numero);
+        }
+        private void limpiar(){//Cada vez que se quiera vaciar las cajas.
+            caja1.setText("");
+            caja2.setText("");
+            caja3.setText("");
         }
     }
        
@@ -148,7 +198,7 @@ public class Calculadora_Class extends JFrame{
         etiqueta3.setBounds(370, 120, 130, 30);
         panel.add(etiqueta3);
         
-        JTextField caja3 = new JTextField();
+        
         caja3.setBounds(300, 150, 197, 30);
         caja3.setEditable(false);
         panel.add(caja3);
@@ -157,7 +207,7 @@ public class Calculadora_Class extends JFrame{
         etiqueta4.setBounds(140, 420, 200, 30);
         panel.add(etiqueta4);
         
-        JTextField caja4 = new JTextField();
+        caja4 = new JTextField();
         caja4.setBounds(160, 420, 200, 30);
         caja4.setEditable(false);
         panel.add(caja4);
